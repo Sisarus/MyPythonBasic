@@ -1,13 +1,12 @@
-from urllib import request
-import json
+import requests  # https://requests.readthedocs.io/en/latest/
 
 url = "https://official-joke-api.appspot.com/random_ten"
-r = request.urlopen(url)
+r = requests.get(url)
 
-print(r.getcode())
-data = r.read()
-jsonData = json.loads(data)
-print(jsonData)
+print(r.status_code)
+data = r.text
+
+jsonData = r.json()
 
 
 class Joke:

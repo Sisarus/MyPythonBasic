@@ -1,13 +1,13 @@
-from urllib import request
-import json
+import requests  # https://requests.readthedocs.io/en/latest/
+import pyttsx3
 
 url = "https://official-joke-api.appspot.com/random_ten"
-r = request.urlopen(url)
+r = requests.get(url)
 
-print(r.getcode())
-data = r.read()
-jsonData = json.loads(data)
-print(jsonData)
+print(r.status_code)
+data = r.text
+
+jsonData = r.json()
 
 
 class Joke:
@@ -32,3 +32,5 @@ print(len(jokes))
 
 for joke in jokes:
     print(joke)
+    pyttsx3.speak(joke.setup)
+    pyttsx3.speak(joke.punchline)
