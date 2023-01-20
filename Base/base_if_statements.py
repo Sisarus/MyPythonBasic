@@ -45,3 +45,9 @@ for x in lista:
         break
 if not loytyi:
     print("ei löytynyt parillista")
+
+ def testi(*lista):
+    print("Annoit", len(lista), "parametria")
+    print("Niiden summa on", sum(lista))
+
+testi(1, 2, 3, 4, 5)
