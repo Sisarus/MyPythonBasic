@@ -35,3 +35,13 @@ number = 2
 message = "positive" if number > 0 else "zero or negative"
 
 print(message)
+
+lista = [3,5,2,8,1]
+loytyi = False
+for x in lista:
+    if x%2 == 0:
+        print("löytyi parillinen", x)
+        loytyi = True
+        break
+if not loytyi:
+    print("ei löytynyt parillista")
